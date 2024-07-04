@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ subreddit.name }}</h1>
+<p>{{ subreddit.description }}</p>
+<h2>Posts</h2>
+<ul>
+    {% for post in posts %}
+    <li>{{ post.title }} by {{ post.author.username }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

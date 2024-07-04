@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Subreddits</h1>
+<ul>
+    {% for subreddit in subreddits %}
+    <li><a href="{{ url_for('subreddit', subreddit_id=subreddit.id) }}">{{ subreddit.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

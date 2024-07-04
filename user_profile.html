@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ user.username }}'s Profile</h1>
+<p>Email: {{ user.email }}</p>
+<h2>Subscriptions</h2>
+<ul>
+    {% for sub in subscriptions %}
+    <li>{{ sub.subreddit.name }}</li>
+    {% endfor %}
+</ul>
+<h2>Upvotes</h2>
+<ul>
+    {% for upvote in upvotes %}
+    <li>{{ upvote.post.title }} in {{ upvote.post.subreddit.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
